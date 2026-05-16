@@ -43,8 +43,6 @@ function useGoogleAnalytics() {
       window.gtag("js", new Date() as unknown as string, {});
       window.gtag("config", GA_ID, {
         anonymize_ip: true,
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false,
       });
     }
 
