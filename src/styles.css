@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Paleta extraída do mockup:
+  #F5F7FA  fundo geral
+  #FFFFFF  cards
+  #1A56B0  azul primário
+  #1A2B4A  texto principal
+  #4A6FA5  texto muted
+  #EEF4FF  primary-soft (hero, ícones)
+  #E8F0FB  secondary-soft
+  #E2E8F0  borda
+  #D93025  vermelho emergência
+*/
+
+@theme inline {
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Tokens de cor → CSS vars de :root */
+  --color-background:             var(--background);
+  --color-foreground:             var(--foreground);
+  --color-card:                   var(--card);
+  --color-card-foreground:        var(--card-foreground);
+  --color-popover:                var(--popover);
+  --color-popover-foreground:     var(--popover-foreground);
+  --color-primary:                var(--primary);
+  --color-primary-foreground:     var(--primary-foreground);
+  --color-primary-soft:           var(--primary-soft);
+  --color-secondary:              var(--secondary);
+  --color-secondary-foreground:   var(--secondary-foreground);
+  --color-secondary-soft:         var(--secondary-soft);
+  --color-muted:                  var(--muted);
+  --color-muted-foreground:       var(--muted-foreground);
+  --color-accent:                 var(--accent);
+  --color-accent-foreground:      var(--accent-foreground);
+  --color-destructive:            var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:                 var(--border);
+  --color-input:                  var(--input);
+  --color-ring:                   var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1:                var(--chart-1);
+  --color-chart-2:                var(--chart-2);
+  --color-chart-3:                var(--chart-3);
+  --color-chart-4:                var(--chart-4);
+  --color-chart-5:                var(--chart-5);
+  --color-sidebar:                        var(--sidebar);
+  --color-sidebar-foreground:             var(--sidebar-foreground);
+  --color-sidebar-primary:                var(--sidebar-primary);
+  --color-sidebar-primary-foreground:     var(--sidebar-primary-foreground);
+  --color-sidebar-accent:                 var(--sidebar-accent);
+  --color-sidebar-accent-foreground:      var(--sidebar-accent-foreground);
+  --color-sidebar-border:                 var(--sidebar-border);
+  --color-sidebar-ring:                   var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* ── Fundo geral: #F5F7FA ── */
+  --background:          #F5F7FA;
+  /* ── Texto principal: #1A2B4A ── */
+  --foreground:          #1A2B4A;
+
+  /* Cards: branco puro */
+  --card:                #FFFFFF;
+  --card-foreground:     #1A2B4A;
+  --popover:             #FFFFFF;
+  --popover-foreground:  #1A2B4A;
+
+  /* Azul primário: #1A56B0 */
+  --primary:             #1A56B0;
+  --primary-foreground:  #FFFFFF;
+
+  /* Fundo hero / ícones: #EEF4FF */
+  --primary-soft:        #EEF4FF;
+
+  /* Secondary = mesmo azul (cards usam primary-soft / secondary-soft) */
+  --secondary:           #1A56B0;
+  --secondary-foreground:#FFFFFF;
+
+  /* Fundo cards secundários: #E8F0FB */
+  --secondary-soft:      #E8F0FB;
+
+  /* Muted */
+  --muted:               #F0F4FA;
+  --muted-foreground:    #4A6FA5;
+
+  /* Accent */
+  --accent:              #EEF4FF;
+  --accent-foreground:   #1A56B0;
+
+  /* Vermelho emergência: #D93025 */
+  --destructive:         #D93025;
+  --destructive-foreground: #FFFFFF;
+
+  /* Borda: #E2E8F0 */
+  --border:              #E2E8F0;
+  --input:               #E8EEF5;
+  --ring:                #1A56B0;
+
+  /* Charts */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6   0.118 184.704);
+  --chart-3: #1A56B0;
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: #D93025;
+
+  /* Sidebar */
+  --sidebar:                    #F5F7FA;
+  --sidebar-foreground:         #1A2B4A;
+  --sidebar-primary:            #1A56B0;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent:             #EEF4FF;
+  --sidebar-accent-foreground:  #1A56B0;
+  --sidebar-border:             #E2E8F0;
+  --sidebar-ring:               #1A56B0;
+}
+
+.dark {
+  --background:          #0F1E36;
+  --foreground:          #E8EEF8;
+  --card:                #162848;
+  --card-foreground:     #E8EEF8;
+  --popover:             #162848;
+  --popover-foreground:  #E8EEF8;
+  --primary:             #6BA3E8;
+  --primary-foreground:  #0F1E36;
+  --primary-soft:        #1C3460;
+  --secondary:           #6BA3E8;
+  --secondary-foreground:#E8EEF8;
+  --secondary-soft:      #192E56;
+  --muted:               #1C3460;
+  --muted-foreground:    #7A9CC8;
+  --accent:              #1C3460;
+  --accent-foreground:   #E8EEF8;
+  --destructive:         #F05347;
+  --destructive-foreground: #FFFFFF;
+  --border:              rgba(255,255,255,0.12);
+  --input:               rgba(255,255,255,0.16);
+  --ring:                #6BA3E8;
+  --chart-1: oklch(0.55 0.22 258);
+  --chart-2: oklch(0.65 0.17 162);
+  --chart-3: oklch(0.75 0.18  70);
+  --chart-4: oklch(0.62 0.26 304);
+  --chart-5: oklch(0.65 0.22  24);
+  --sidebar:                    #162848;
+  --sidebar-foreground:         #E8EEF8;
+  --sidebar-primary:            #6BA3E8;
+  --sidebar-primary-foreground: #0F1E36;
+  --sidebar-accent:             #1C3460;
+  --sidebar-accent-foreground:  #E8EEF8;
+  --sidebar-border:             rgba(255,255,255,0.12);
+  --sidebar-ring:               #6BA3E8;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: var(--user-font-size, 1rem);
+  }
+
+  /* Acessibilidade: modo alto contraste */
+  .hc {
+    --background:       #FFFFFF;
+    --foreground:       #000000;
+    --card:             #FFFFFF;
+    --card-foreground:  #000000;
+    --primary:          #0D3D8A;
+    --primary-foreground: #FFFFFF;
+    --primary-soft:     #D8E6FF;
+    --muted-foreground: #111111;
+    --border:           #000000;
+    --destructive:      #B00000;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
