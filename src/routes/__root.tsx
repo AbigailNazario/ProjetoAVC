@@ -28,29 +28,28 @@ function useGoogleAnalytics() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!GA_ID) return;
-
-    // Injeta o script do GA4 uma única vez
-    if (!document.getElementById("ga-script")) {
-      const s = document.createElement("script");
-      s.id = "ga-script";
-      s.async = true;
-      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-      document.head.appendChild(s);
-
-      window.dataLayer = window.dataLayer ?? [];
-      window.gtag = function (...args) { window.dataLayer.push(args); };
-      window.gtag("js", new Date() as unknown as string, {});
-      window.gtag("config", GA_ID, {
-        anonymize_ip: true,
+    if (document.getElementById("ga-script")) {
+      // Script já carregado, só registra a página
+      window.gtag("config", "G-RPEBVJ7KY9", {
+        page_path: location.pathname,
       });
+      return;
     }
 
-    // Rastreia mudança de página (SPA)
-    window.gtag?.("event", "page_view", {
-      page_path: location.pathname,
-      send_to: GA_ID,
-    });
+    // Injeta script do Google exatamente como o GA4 recomenda
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag as unknown as Window["gtag"];
+    window.gtag("js", new Date() as unknown as string, {});
+    window.gtag("config", "G-RPEBVJ7KY9");
+
+    const s = document.createElement("script");
+    s.id = "ga-script";
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-RPEBVJ7KY9";
+    document.head.appendChild(s);
   }, [location.pathname]);
 }
 
