@@ -27,7 +27,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             "Cache-Control": "public, max-age=3600",
           },
         });
-      },
+     },
     },
   },
 });
