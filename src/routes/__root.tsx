@@ -40,7 +40,7 @@ function useGoogleAnalytics() {
 
       window.dataLayer = window.dataLayer ?? [];
       window.gtag = function (...args) { window.dataLayer.push(args); };
-      window.gtag("js", new Date().toISOString(), {});
+      window.gtag("js", new Date() as unknown as string, {});
       window.gtag("config", GA_ID, {
         anonymize_ip: true,
         allow_google_signals: false,
