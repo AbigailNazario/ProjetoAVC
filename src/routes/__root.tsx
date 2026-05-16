@@ -22,7 +22,7 @@ declare global {
     gtag: (...args: unknown[]) => void;
   }
 }
-const GA_ID = import.meta.env.VITE_GA_ID ?? "";
+const GA_ID = "G-RPEBVJ7KY9";
 
 function useGoogleAnalytics() {
   const location = useLocation();
