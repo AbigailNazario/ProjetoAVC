@@ -13,6 +13,48 @@ import { AccessibilityProvider } from "@/lib/accessibility";
 import { Header } from "@/components/Header";
 import { AccessibilityBar } from "@/components/AccessibilityBar";
 import { EmergencyButton } from "@/components/EmergencyButton";
+import { useEffect } from "react";
+import { useLocation } from "@tanstack/react-router";
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
+const GA_ID = import.meta.env.VITE_GA_ID ?? "";
+
+function useGoogleAnalytics() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!GA_ID) return;
+
+    // Injeta o script do GA4 uma única vez
+    if (!document.getElementById("ga-script")) {
+      const s = document.createElement("script");
+      s.id = "ga-script";
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer ?? [];
+      window.gtag = function (...args) { window.dataLayer.push(args); };
+      window.gtag("js", new Date().toISOString(), {});
+      window.gtag("config", GA_ID, {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+      });
+    }
+
+    // Rastreia mudança de página (SPA)
+    window.gtag?.("event", "page_view", {
+      page_path: location.pathname,
+      send_to: GA_ID,
+    });
+  }, [location.pathname]);
+}
 
 function NotFoundComponent() {
   return (
@@ -124,6 +166,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useGoogleAnalytics(); // ← adicione essa linha
 
   return (
     <QueryClientProvider client={queryClient}>
