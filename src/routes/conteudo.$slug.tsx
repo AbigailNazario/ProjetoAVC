@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import { getSection, SECTIONS } from "@/lib/content";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { AudioReader } from "@/components/AudioReader";
@@ -63,7 +63,7 @@ function Conteudo() {
 
       <header className="flex items-center gap-4 rounded-2xl border border-primary/15 bg-gradient-to-br from-primary-soft to-card p-5">
         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-card shadow-sm">
-            <img src={iconSrc} alt="" className="h-10 w-10 object-contain" aria-hidden />
+          <img src={iconSrc} alt="" className="h-10 w-10 object-contain" aria-hidden />
         </div>
         <div>
           <h1 className="text-2xl font-bold leading-tight text-primary">{section.title}</h1>
@@ -75,7 +75,9 @@ function Conteudo() {
 
       <section className="rounded-2xl border-2 border-border bg-card p-5">
         <h2 className="text-lg font-semibold">Entenda</h2>
-        <p className="mt-2 text-base leading-relaxed text-foreground whitespace-pre-line">{section.body}</p>
+        <p className="mt-2 text-base leading-relaxed text-foreground whitespace-pre-line">
+          {section.body}
+        </p>
       </section>
 
       <AudioReader text={`${section.title}. ${section.body}`} label={section.slug} />
@@ -86,6 +88,17 @@ function Conteudo() {
       </section>
 
       <FeedbackBar topic={section.slug} />
+
+      {section.slug === "medicacoes" && (
+        <a
+        href="/Tabelas_de_medicacoes_saude.pdf"
+        download
+        className="flex items-center justify-center gap-2 rounded-2xl border-2 border-primary bg-primary-soft px-5 py-4 text-base font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+        >
+        <Download className="h-5 w-5" />
+          Baixar tabelas para apoio (PDF)
+        </a>
+      )}
 
       <nav aria-label="Outras seções" className="space-y-2">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">

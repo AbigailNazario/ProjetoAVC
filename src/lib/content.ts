@@ -33,7 +33,7 @@ export const SECTIONS: Section[] = [
     title: "Medicações",
     icon: "medicamento",
     short: "Como organizar e tomar os remédios corretamente.",
-    videoUrl: "https://youtu.be/QQnvcEekIDI",
+    videoUrl: "https://www.youtube.com/embed/QQnvcEekIDI",
     body:
       "Olá! Após a alta hospitalar, começa uma nova e fundamental etapa em casa. O uso correto das medicações é essencial para evitar um novo AVC. \n O remédio funciona como um escudo invisível, protegendo seu cérebro vinte e quatro horas por dia contra a pressão alta, o excesso de açúcar e a gordura no sangue. \n Mesmo se estiver se sentindo muito bem, nunca pare a medicação sem falar com seu médico do posto de saúde ou do ambulatório. Sem a medicação, o risco de um novo AVC aumenta muito. \n Lembre-se: Evite o uso de café, chás ou álcool na ingesta dos medicamentos, use apenas água, pois eles podem interferir no efeito do remédio. \n Uma dica valiosa é utilizar alarmes, lembretes no seu celular ou ajuda de familiares para garantir que você tome cada dose exatamente no horário correto.\n Pequenos hábitos diários garantem grandes resultados na sua recuperação. Cuidar da  sua medicação é, acima de tudo, cuidar da sua própria vida.",
     checklist: [
@@ -51,7 +51,7 @@ export const SECTIONS: Section[] = [
     title: "Mobilização",
     icon: "movimentacao",
     short: "Cuidados e importância na mobilização pós AVC",
-    videoUrl: "https://www.youtube.com/embed/9No-FiEInLA",
+    videoUrl: "https://www.youtube.com/embed/P-GG-wjmYcg",
     body:
       "Olá! Após o AVC, colocar o corpo em movimento de forma segura é o segredo para recuperar a força e a independência. A fisioterapia é fundamental nesse processo, pois ajuda o cérebro a reaprender os movimentos e evita que as articulações fiquem travadas ou doloridas. Além da fisioterapia, quando o paciente estiver liberado pelo médico, começar uma atividade física regular e leve, como pequenas caminhadas no dia a dia, ajuda a manter o coração forte, melhora o humor, controla a pressão e evita que um novo AVC aconteça. Mas lembre-se: comece devagar e respeite o limite do corpo. Para o cuidador que ajuda nessa movimentação, a regra de ouro é: nunca puxe o paciente pelo braço que está fraco ou paralisado, para não machucar o ombro dele. Segure sempre pelo tronco ou dê apoio pelas costas. E onde conseguir o acompanhamento? Vá ao posto de saúde mais próximo da sua casa e se informe sobre o atendimento com fisioterapeuta. A reabilitação exige paciência, mas cada pequeno passo é uma grande vitória. Vamos juntos cuidar da vida!",
     checklist: [
@@ -68,7 +68,7 @@ export const SECTIONS: Section[] = [
     title: "Alimentação",
     icon: "alimentacao",
     short: "Alimentação saudável para proteger o cérebro.",
-    videoUrl: "https://youtu.be/mmw_0NIVRPs",
+    videoUrl: "https://www.youtube.com/embed/mmw_0NIVRPs",
     body:
       "Olá! Alimentar-se com segurança após o AVC é um dos cuidados mais importantes em casa. \n A sequela do AVC pode enfraquecer os músculos da mastigação e da deglutição, aumentando o risco de engasgos e pneumonia. \n Por isso, siga as regras de ouro. Primeira: a posição. Nunca alimente o paciente deitado. \n Ele deve estar sentado, bem ereto, em um ângulo de noventa graus.\n Mantenha ele sentado por pelo menos trinta minutos após a refeição. \n Segunda: a consistência da comida. Siga a orientação da fonoaudióloga.Se a dieta for pastosa, não ofereça alimentos duros ou líquidos finos sem autorização.\n Terceira: Faça de 5 a 6 refeições por dia, ricas em nutrientes como verduras, frutas e proteínas.E com pouca gordura, sal e açúcar, beba no mínimo 2 litros d'água. \n Quarta: o ambiente. Evite distrações e pressa.Ofereça pequenas porções e espere engolir totalmente antes da próxima colherada.Se o paciente tossir, pigarrear ou a voz ficar molhada, pare a alimentação imediatamente e procure orientação. Comer com segurança protege os pulmões e ajuda na recuperação.",
     checklist: [
@@ -85,7 +85,7 @@ export const SECTIONS: Section[] = [
     title: "Sinais de alerta",
     icon: "atencao",
     short: "Reconheça sinais que pedem atenção imediata.",
-    videoUrl: "https://www.youtube.com/embed/9No-FiEInLA",
+    videoUrl: "https://www.youtube.com/embed/lx-o2SYwIJk",
     body:
       "Olá! Depois da alta hospitalar, o cuidador e a família precisam ficar muito atentos a alguns sinais que mostram que o paciente precisa voltar para a emergência imediatamente. O primeiro grupo de sinais são os sangramentos. Por causa de alguns remédios que o paciente toma para afinar o sangue e evitar novos entupimentos, podem acontecer sangramentos no nariz, na gengiva ao escovar os dentes, ou a presença de sangue na urina e nas fezes. Se notar qualquer sangramento, procure o serviço de emergência. Outro sinal grave é o rebaixamento da consciência. Se o paciente começar a dormir demais e for difícil de acordar, se mostrar muita confusão, desorientação ou uma agitação estranha que ele não tinha antes, vômitos seguidos isso é um aviso de perigo. Por fim, fique de olho nos sinais de um novo AVC: veja se a boca entortou ao sorrir, se um dos braços perdeu a força ou se a fala ficou arrastada e difícil de entender. Diante de qualquer um desses sinais, não espere melhorar em casa. Vá direto para a emergência ou ligue para o SAMU no número 192. Quem avisa a tempo, salva uma vida!",
     checklist: [
