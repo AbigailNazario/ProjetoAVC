@@ -36,7 +36,7 @@ function Sobre() {
         <p className="mt-2 text-base leading-relaxed text-foreground">
           Reduzir reinternações e fortalecer a continuidade do cuidado por meio de
           informação clara, acessível e humanizada. O acesso ocorre por QR Code
-          impresso em folhetos distribuídos pelo hospital.
+          impresso em folhetos distribuídos na alta hospitalar.
         </p>
       </section>
 
@@ -45,7 +45,7 @@ function Sobre() {
         <ul className="mt-2 list-disc space-y-1 pl-5 text-base">
           <li>Pacientes em recuperação após AVC</li>
           <li>Familiares e cuidadores</li>
-          <li>Equipes de saúde em educação ao paciente</li>
+          <li>Equipes de saúde na assistencia ao paciente</li>
         </ul>
       </section>
 
