@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Info } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Info, ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -17,6 +17,12 @@ export const Route = createFileRoute("/sobre")({
 function Sobre() {
   return (
     <article className="space-y-5">
+      <Link
+        to="/"
+        className="inline-flex items-center gap-1 text-sm font-semibold text-primary"
+      >
+        <ArrowLeft className="h-4 w-4" /> Voltar
+      </Link>
       <header className="space-y-2">
         <h1 className="text-2xl font-bold">Sobre o AVC Conecta</h1>
         <p className="text-muted-foreground">

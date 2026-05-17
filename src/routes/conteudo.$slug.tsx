@@ -63,11 +63,7 @@ function Conteudo() {
 
       <header className="flex items-center gap-4 rounded-2xl border border-primary/15 bg-gradient-to-br from-primary-soft to-card p-5">
         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-card shadow-sm">
-          {iconSrc ? (
             <img src={iconSrc} alt="" className="h-10 w-10 object-contain" aria-hidden />
-          ) : (
-            <span className="text-3xl">{section.emoji}</span>
-          )}
         </div>
         <div>
           <h1 className="text-2xl font-bold leading-tight text-primary">{section.title}</h1>
@@ -79,7 +75,7 @@ function Conteudo() {
 
       <section className="rounded-2xl border-2 border-border bg-card p-5">
         <h2 className="text-lg font-semibold">Entenda</h2>
-        <p className="mt-2 text-base leading-relaxed text-foreground">{section.body}</p>
+        <p className="mt-2 text-base leading-relaxed text-foreground whitespace-pre-line">{section.body}</p>
       </section>
 
       <AudioReader text={`${section.title}. ${section.body}`} label={section.slug} />
@@ -101,9 +97,10 @@ function Conteudo() {
               key={s.slug}
               to="/conteudo/$slug"
               params={{ slug: s.slug }}
-              className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium hover:bg-muted transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium hover:bg-muted transition-colors"
             >
-              {s.emoji} {s.title}
+              <img src={ICON_MAP[s.icon]} alt="" className="h-4 w-4 object-contain" aria-hidden />
+              {s.title}
             </Link>
           ))}
         </div>

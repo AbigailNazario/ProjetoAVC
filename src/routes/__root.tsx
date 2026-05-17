@@ -11,7 +11,6 @@ import {
 import appCss from "../styles.css?url";
 import { AccessibilityProvider } from "@/lib/accessibility";
 import { Header } from "@/components/Header";
-import { AccessibilityBar } from "@/components/AccessibilityBar";
 import { EmergencyButton } from "@/components/EmergencyButton";
 import { useEffect } from "react";
 import { useLocation } from "@tanstack/react-router";
@@ -137,8 +136,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/icon.svg" },
+      { rel: "icon", href: "/icon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/icon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -174,7 +173,6 @@ function RootComponent() {
         >
           Pular para o conteúdo
         </a>
-        <AccessibilityBar />
         <Header />
         <main id="conteudo-principal" className="mx-auto max-w-2xl px-4 pb-32 pt-4">
           <Outlet />

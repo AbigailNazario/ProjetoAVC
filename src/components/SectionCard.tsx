@@ -35,11 +35,7 @@ export function SectionCard({ section }: { section: Section }) {
       aria-label={`Abrir seção ${section.title}`}
     >
       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-card shadow-sm">
-        {iconSrc ? (
-          <img src={iconSrc} alt="" className="h-9 w-9 object-contain" aria-hidden />
-        ) : (
-          <span className="text-3xl">{section.emoji}</span>
-        )}
+        <img src={iconSrc} alt="" className="h-9 w-9 object-contain" aria-hidden />
       </div>
       <div className="flex-1 min-w-0">
         <h3 className="text-lg font-semibold text-foreground">{section.title}</h3>

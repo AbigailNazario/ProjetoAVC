@@ -1,8 +1,12 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { AlertTriangle } from "lucide-react";
 import { trackEvent } from "@/lib/accessibility";
 
 export function EmergencyButton() {
+  const location = useLocation();
+
+  if (location.pathname === "/emergencia") return null;
+
   return (
     <Link
       to="/emergencia"

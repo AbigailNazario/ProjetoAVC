@@ -3,21 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
-  Paleta extraída do mockup:
-  #F5F7FA  fundo geral
-  #FFFFFF  cards
-  #1A56B0  azul primário
-  #1A2B4A  texto principal
-  #4A6FA5  texto muted
-  #EEF4FF  primary-soft (hero, ícones)
-  #E8F0FB  secondary-soft
-  #E2E8F0  borda
-  #D93025  vermelho emergência
-*/
-
 @theme inline {
-  /* Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,7 +12,6 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Tokens de cor → CSS vars de :root */
   --color-background:             var(--background);
   --color-foreground:             var(--foreground);
   --color-card:                   var(--card);
@@ -67,56 +52,32 @@
 :root {
   --radius: 0.75rem;
 
-  /* ── Fundo geral: #F5F7FA ── */
   --background:          #F5F7FA;
-  /* ── Texto principal: #1A2B4A ── */
   --foreground:          #1A2B4A;
-
-  /* Cards: branco puro */
   --card:                #FFFFFF;
   --card-foreground:     #1A2B4A;
   --popover:             #FFFFFF;
   --popover-foreground:  #1A2B4A;
-
-  /* Azul primário: #1A56B0 */
   --primary:             #1A56B0;
   --primary-foreground:  #FFFFFF;
-
-  /* Fundo hero / ícones: #EEF4FF */
   --primary-soft:        #EEF4FF;
-
-  /* Secondary = mesmo azul (cards usam primary-soft / secondary-soft) */
   --secondary:           #1A56B0;
   --secondary-foreground:#FFFFFF;
-
-  /* Fundo cards secundários: #E8F0FB */
   --secondary-soft:      #E8F0FB;
-
-  /* Muted */
   --muted:               #F0F4FA;
   --muted-foreground:    #4A6FA5;
-
-  /* Accent */
   --accent:              #EEF4FF;
   --accent-foreground:   #1A56B0;
-
-  /* Vermelho emergência: #D93025 */
   --destructive:         #D93025;
   --destructive-foreground: #FFFFFF;
-
-  /* Borda: #E2E8F0 */
   --border:              #E2E8F0;
   --input:               #E8EEF5;
   --ring:                #1A56B0;
-
-  /* Charts */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6   0.118 184.704);
   --chart-3: #1A56B0;
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: #D93025;
-
-  /* Sidebar */
   --sidebar:                    #F5F7FA;
   --sidebar-foreground:         #1A2B4A;
   --sidebar-primary:            #1A56B0;
@@ -125,6 +86,31 @@
   --sidebar-accent-foreground:  #1A56B0;
   --sidebar-border:             #E2E8F0;
   --sidebar-ring:               #1A56B0;
+}
+
+/* Alto contraste — aplicado direto no :root quando .hc está no <html> */
+html.hc {
+  --background:          #000000;
+  --foreground:          #FFFFFF;
+  --card:                #111111;
+  --card-foreground:     #FFFFFF;
+  --popover:             #111111;
+  --popover-foreground:  #FFFFFF;
+  --primary:             #4D9FFF;
+  --primary-foreground:  #000000;
+  --primary-soft:        #001F4D;
+  --secondary:           #4D9FFF;
+  --secondary-foreground:#000000;
+  --secondary-soft:      #001A3D;
+  --muted:               #222222;
+  --muted-foreground:    #CCCCCC;
+  --accent:              #001F4D;
+  --accent-foreground:   #4D9FFF;
+  --destructive:         #FF4444;
+  --destructive-foreground: #FFFFFF;
+  --border:              #444444;
+  --input:               #333333;
+  --ring:                #4D9FFF;
 }
 
 .dark {
@@ -169,25 +155,14 @@
     border-color: var(--border);
   }
 
+  html {
+    font-size: var(--user-font-size, 16px);
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: var(--user-font-size, 1rem);
-  }
-
-  /* Acessibilidade: modo alto contraste */
-  .hc {
-    --background:       #FFFFFF;
-    --foreground:       #000000;
-    --card:             #FFFFFF;
-    --card-foreground:  #000000;
-    --primary:          #0D3D8A;
-    --primary-foreground: #FFFFFF;
-    --primary-soft:     #D8E6FF;
-    --muted-foreground: #111111;
-    --border:           #000000;
-    --destructive:      #B00000;
   }
 
   :focus-visible {

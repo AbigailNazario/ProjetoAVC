@@ -5,10 +5,10 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#143b7a",
+  "background_color": "#F5F7FA",
+  "theme_color": "#1A56B0",
   "lang": "pt-BR",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "/icon.png", "sizes": "528x551", "type": "image/png", "purpose": "any maskable" }
   ]
 }

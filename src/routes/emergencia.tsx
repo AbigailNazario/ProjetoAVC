@@ -3,6 +3,7 @@ import { AlertTriangle, Phone, ArrowLeft } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { trackEvent } from "@/lib/accessibility";
 
+
 export const Route = createFileRoute("/emergencia")({
   head: () => ({
     meta: [

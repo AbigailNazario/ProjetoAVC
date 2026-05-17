@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Accessibility } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { AccessibilityPanel } from "@/components/AccessibilityBar";
 
 export function Header() {
   return (
@@ -10,21 +10,14 @@ export function Header() {
           <img src={logo} alt="" className="h-12 w-auto" />
           <span className="leading-tight">
             <span className="block text-lg font-bold tracking-tight text-primary sm:text-xl">
-              AVC <span className="text-foreground">Conecta</span>
+              AVC Conecta
             </span>
             <span className="block text-xs text-muted-foreground sm:text-sm">
               Informação, cuidado e recuperação
             </span>
           </span>
         </Link>
-        <Link
-          to="/sobre"
-          className="flex items-center gap-2 rounded-full border border-primary/30 bg-primary-soft px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
-          aria-label="Acessibilidade e sobre o projeto"
-        >
-          <Accessibility className="h-5 w-5" />
-          <span>Acessibilidade</span>
-        </Link>
+        <AccessibilityPanel />
       </div>
     </header>
   );

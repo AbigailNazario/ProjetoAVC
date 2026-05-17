@@ -25,7 +25,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--user-font-size", `${fontScale}rem`);
+    document.documentElement.style.fontSize = `${fontScale * 16}px`;
     localStorage.setItem("avc:fontScale", String(fontScale));
   }, [fontScale]);
 
@@ -34,7 +34,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("avc:hc", highContrast ? "1" : "0");
   }, [highContrast]);
 
-  const setFontScale = (n: number) => setFontScaleState(Math.min(1.5, Math.max(0.9, n)));
+ const setFontScale = (n: number) => setFontScaleState(Math.min(1.5, Math.max(0.9, Math.round(n * 10) / 10)));
   const toggleHighContrast = () => setHC((v) => !v);
 
   const speak = (text: string) => {
