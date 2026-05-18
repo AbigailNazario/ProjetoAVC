@@ -1,14 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import type { Section } from "@/lib/content";
+import { useAccessibility } from "@/lib/accessibility";
 
-// Icon imports
+// Icon imports — normal
 import cerebroIcon from "@/icons/cerebro.png";
 import medicamentoIcon from "@/icons/medicamento.png";
 import movimentacaoIcon from "@/icons/movimentacao.png";
 import alimentacaoIcon from "@/icons/alimentacao.png";
 import atencaoIcon from "@/icons/atencao.png";
 import assistenciaIcon from "@/icons/assistencia.png";
+
+// Icon imports — dark (alto contraste)
+import cerebroIconDark from "@/icons/cerebro-Dark.png";
+import medicamentoIconDark from "@/icons/medicamento-Dark.png";
+import movimentacaoIconDark from "@/icons/movimentacao-Dark.png";
+import alimentacaoIconDark from "@/icons/alimentacao-Dark.png";
+import atencaoIconDark from "@/icons/atencao-Dark.png";
+import assistenciaIconDark from "@/icons/assistencia-Dark.png";
 
 const ICON_MAP: Record<string, string> = {
   cerebro: cerebroIcon,
@@ -19,13 +28,24 @@ const ICON_MAP: Record<string, string> = {
   assistencia: assistenciaIcon,
 };
 
+const ICON_MAP_DARK: Record<string, string> = {
+  cerebro: cerebroIconDark,
+  medicamento: medicamentoIconDark,
+  movimentacao: movimentacaoIconDark,
+  alimentacao: alimentacaoIconDark,
+  atencao: atencaoIconDark,
+  assistencia: assistenciaIconDark,
+};
+
 export function SectionCard({ section }: { section: Section }) {
+  const { highContrast } = useAccessibility();
+  
   const accent =
     section.accent === "secondary"
       ? "bg-secondary-soft border-secondary/40 hover:border-secondary/70"
       : "bg-primary-soft border-primary/30 hover:border-primary/60";
 
-  const iconSrc = ICON_MAP[section.icon];
+  const iconSrc = highContrast ? ICON_MAP_DARK[section.icon] : ICON_MAP[section.icon];
 
   return (
     <Link

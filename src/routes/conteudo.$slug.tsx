@@ -5,6 +5,7 @@ import { VideoPlayer } from "@/components/VideoPlayer";
 import { AudioReader } from "@/components/AudioReader";
 import { Checklist } from "@/components/Checklist";
 import { FeedbackBar } from "@/components/FeedbackBar";
+import { useAccessibility } from "@/lib/accessibility";
 
 // Icon imports
 import cerebroIcon from "@/icons/cerebro.png";
@@ -21,6 +22,22 @@ const ICON_MAP: Record<string, string> = {
   alimentacao: alimentacaoIcon,
   atencao: atencaoIcon,
   assistencia: assistenciaIcon,
+};
+
+import cerebroIconDark from "@/icons/cerebro-Dark.png";
+import medicamentoIconDark from "@/icons/medicamento-Dark.png";
+import movimentacaoIconDark from "@/icons/movimentacao-Dark.png";
+import alimentacaoIconDark from "@/icons/alimentacao-Dark.png";
+import atencaoIconDark from "@/icons/atencao-Dark.png";
+import assistenciaIconDark from "@/icons/assistencia-Dark.png";
+
+const ICON_MAP_DARK: Record<string, string> = {
+  cerebro: cerebroIconDark,
+  medicamento: medicamentoIconDark,
+  movimentacao: movimentacaoIconDark,
+  alimentacao: alimentacaoIconDark,
+  atencao: atencaoIconDark,
+  assistencia: assistenciaIconDark,
 };
 
 export const Route = createFileRoute("/conteudo/$slug")({
@@ -50,7 +67,8 @@ export const Route = createFileRoute("/conteudo/$slug")({
 
 function Conteudo() {
   const { section } = Route.useLoaderData();
-  const iconSrc = ICON_MAP[section.icon];
+  const { highContrast } = useAccessibility();
+  const iconSrc = highContrast ? ICON_MAP_DARK[section.icon] : ICON_MAP[section.icon];
 
   return (
     <article className="space-y-5">
@@ -112,7 +130,7 @@ function Conteudo() {
               params={{ slug: s.slug }}
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium hover:bg-muted transition-colors"
             >
-              <img src={ICON_MAP[s.icon]} alt="" className="h-4 w-4 object-contain" aria-hidden />
+              <img src={highContrast ? ICON_MAP_DARK[s.icon] : ICON_MAP[s.icon]} alt="" className="h-4 w-4 object-contain" aria-hidden />
               {s.title}
             </Link>
           ))}

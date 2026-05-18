@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 import { SECTIONS } from "@/lib/content";
 import { SectionCard } from "@/components/SectionCard";
+import { useAccessibility } from "@/lib/accessibility";
 import heroImg from "@/assets/hero.png";
 import assistenciaIcon from "@/icons/assistencia.png";
+import assistenciaIconDark from "@/icons/assistencia-Dark.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,6 +22,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const { highContrast } = useAccessibility();
+
   return (
     <div className="space-y-6">
       {/* Hero Section */}
@@ -65,7 +69,12 @@ function Home() {
       <section className="rounded-2xl border-2 border-border bg-card p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary-soft">
-            <img src={assistenciaIcon} alt="" className="h-9 w-9 object-contain" aria-hidden />
+            <img
+              src={highContrast ? assistenciaIconDark : assistenciaIcon}
+              alt=""
+              className="h-9 w-9 object-contain"
+              aria-hidden
+            />
           </div>
           <div className="flex-1">
             <h3 className="text-base font-semibold">Em caso de dúvida</h3>
