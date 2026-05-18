@@ -66,7 +66,7 @@ Monitoramento anônimo de:
 
 - TypeScript
 - CSS
-- HTML
+- JavaScript
 - Progressive Web App (PWA)
 - Service Worker
 - Manifest Web App
