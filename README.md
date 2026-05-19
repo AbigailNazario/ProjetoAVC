@@ -82,3 +82,7 @@ O projeto **AVC Conecta** foi idealizado para apresentação em congresso acadê
 - Desenvolvimento do PWA, interface e implementação tecnológica: Abigail Nazário
 
 O projeto foi desenvolvido de forma colaborativa, unindo tecnologia, acessibilidade digital e cuidado em saúde.
+
+## Licença
+
+Este projeto está sob a licença MIT.
